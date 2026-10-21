@@ -1,0 +1,53 @@
+{
+  "name": "supabase-rls-audit",
+  "version": "0.1.0",
+  "description": "Black-box security check for Supabase apps: finds tables anyone can read with the public key, service keys leaked in your front-end bundle, public buckets and open signups. Built for Lovable, Bolt, v0 and hand-written apps alike.",
+  "type": "module",
+  "bin": {
+    "supabase-rls-audit": "./dist/cli.js"
+  },
+  "main": "./dist/audit.js",
+  "types": "./dist/audit.d.ts",
+  "files": [
+    "dist",
+    "sql",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test test/*.test.ts",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "demo": "node scripts/demo.ts",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "supabase",
+    "rls",
+    "row-level-security",
+    "security",
+    "audit",
+    "postgrest",
+    "lovable",
+    "bolt",
+    "v0",
+    "vibe-coding"
+  ],
+  "author": "Manuel Guerrero",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManuelDev1810/supabase-rls-audit.git"
+  },
+  "homepage": "https://github.com/ManuelDev1810/supabase-rls-audit#readme",
+  "bugs": {
+    "url": "https://github.com/ManuelDev1810/supabase-rls-audit/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}
